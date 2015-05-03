@@ -31,9 +31,9 @@ chown -R nagios:nagios /usr/local/nagios/libexec/eventhandlers
 /etc/init.d/nagios start
 /etc/init.d/httpd start
 
-htpasswd –c /usr/local/nagios/etc/htpasswd.users nagiosadmin
-Fr33bsd
-Fr33bsd
+htpasswd -c /usr/local/nagios/etc/htpasswd.users nagiosadmin
+changeme
+changeme
 
 cd /tmp/nagios-plugins-2.0.3
 ./configure --with-nagios-user=nagios --with-nagios-group=nagios

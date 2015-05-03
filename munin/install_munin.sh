@@ -7,8 +7,8 @@ yum install munin munin-node rrdtool httpd -y
 
 #Set password
 htpasswd -cm /etc/munin/munin-htpasswd muninadmin
-Fr33bsd
-Fr33bsd
+changeme
+changeme
 
 #Start munin-node
 /etc/init.d/munin-node start
