@@ -1,3 +1,7 @@
+#!/bin/bash
+
+clear
+
 yum install -y wget httpd php gcc glibc glibc-common gd gd-devel make net-snmp
 
 cd /tmp
@@ -40,6 +44,10 @@ chkconfig --add nagios
 chkconfig --level 35 nagios on
 chkconfig --add httpd
 chkconfig --level 35 httpd on
+
+iptables -A INPUT -p tcp -m tcp --dport 80 -j ACCEPT
+iptables-save | sudo tee /etc/sysconfig/iptables
+service iptables restart
 
 
 
