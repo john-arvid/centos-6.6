@@ -59,6 +59,6 @@ iptables -A INPUT -p tcp -m tcp --dport 80 -j ACCEPT
 iptables-save | sudo tee /etc/sysconfig/iptables
 service iptables restart
 
-
+chcon -R -t httpd_sys_content_t /usr/local/nagios
 
 # Done?
