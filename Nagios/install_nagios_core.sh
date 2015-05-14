@@ -2,7 +2,8 @@
 
 clear
 
-yum install -y wget httpd php gcc glibc glibc-common gd gd-devel make net-snmp
+yum install -y wget httpd php gcc glibc glibc-common gd gd-devel make net-snmp
+
 
 cd /tmp
 wget http://prdownloads.sourceforge.net/sourceforge/nagios/nagios-4.0.8.tar.gz
@@ -28,12 +29,12 @@ make install-webconf
 cp -R contrib/eventhandlers/ /usr/local/nagios/libexec/
 chown -R nagios:nagios /usr/local/nagios/libexec/eventhandlers
 /usr/local/nagios/bin/nagios -v /usr/local/nagios/etc/nagios.cfg
-/etc/init.d/nagios start
+/etc/init.d/nagios start
+
 /etc/init.d/httpd start
 
 htpasswd -c /usr/local/nagios/etc/htpasswd.users nagiosadmin
-changeme
-changeme
+
 
 cd /tmp/nagios-plugins-2.0.3
 ./configure --with-nagios-user=nagios --with-nagios-group=nagios
