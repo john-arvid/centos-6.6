@@ -18,9 +18,13 @@ iptables -A INPUT -p tcp -m tcp --dport 22 -j ACCEPT
 # Set access for localhost
 iptables -A INPUT -i lo -j ACCEPT
 
+# Allow created connections
+iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+
 # Allow all output and drop everything else coming inn
 iptables -P OUTPUT ACCEPT
 iptables -P INPUT DROP
+iptables -P FORWARD DROP
 
 # Save iptables
 service iptables save
