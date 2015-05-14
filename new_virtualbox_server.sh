@@ -13,3 +13,10 @@ mount /dev/cdrom /media/cdrom
  
 # Install guest additions
 /cdrom/VBoxLinuxAdditions.run
+
+
+# Make sure eth0 is on when rebooting
+# /etc/sysconfig/network-scripts/ifcfg-eth0
+# ONBOOT=yes
+# ^Make this with sed later
+
