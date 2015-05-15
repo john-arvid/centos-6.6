@@ -16,5 +16,5 @@ rpm -Uvh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.r
 yum --enablerepo=epel update -y
 
 #Install default packages
-yum install puppet facter -y
+yum install puppet facter setroubleshoot -y
 
