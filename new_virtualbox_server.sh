@@ -1,6 +1,6 @@
 
 # Install required packages
-yum install yum install gcc kernel-devel make -y
+yum install gcc kernel-devel make -y
 
 # You actually need to reboot a linux server sometimes
 reboot
