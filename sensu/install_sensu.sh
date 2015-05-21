@@ -2,7 +2,7 @@
 
 # Sensu 0.18
 
-yum install openssl redis erlang -y
+yum install openssl redis erlang wget -y
 
 cd /tmp
 wget http://sensuapp.org/docs/0.18/tools/ssl_certs.tar
@@ -48,7 +48,7 @@ cat <<EOT >> /etc/yum.repos.d/sensu.repo
 
 [sensu]
 name=sensu-main
-baseurl=http://repos.sensuapp.org/yum/el/$releasever/$basearch/
+baseurl=http://repos.sensuapp.org/yum/el/\$releasever/\$basearch/
 gpgcheck=0
 enabled=1
 EOT
@@ -162,15 +162,15 @@ cat <<EOT >> /etc/sensu/uchiwa.json
             "host": "127.0.0.1",
             "ssl": false,
             "port": 4567,
-            "user": "<api-user>",
-            "pass": "<api-password>",
+            "user": "sensu",
+            "pass": "password",
             "path": "",
             "timeout": 5000
         }
     ],
     "uchiwa": {
-        "user": "<uchiwa-user>",
-        "pass": "<uchiwa-password>",
+        "user": "sensu",
+        "pass": "password",
         "port": 3000,
         "stats": 10,
         "refresh": 10000
